@@ -20,6 +20,14 @@ function startMining() {
         ease: 'linear'
     });
 }
+document.getElementById("referral-button").addEventListener("click", function() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+        document.getElementById("referral-message").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("referral-message").style.display = "none";
+        }, 2000);
+    });
+});
 
 // Navigation to other pages
 document.getElementById('tasks-button').addEventListener('click', function () {
