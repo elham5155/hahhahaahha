@@ -58,6 +58,21 @@ body {
             brightness(1.5)
             contrast(2);
 }
+#logo {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    border-radius: 50%;
+    box-shadow: 9px 9px 18px #c1c1c1, -9px -9px 18px #ffffff;
+    animation: spin 10s linear infinite;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+#logo:hover {
+    transform: scale(1.2);
+    box-shadow: 12px 12px 24px #c1c1c1, -12px -12px 24px #ffffff;
+}
+
 
 @keyframes spin {
     from { transform: rotate(0deg); }
@@ -165,5 +180,66 @@ body {
     }
     .task p {
         font-size: 0.8em;
+    }
+}
+/* styles.css */
+.task-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.task:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.task-button img {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s;
+}
+
+.task-button img:hover {
+    transform: rotate(15deg) scale(1.2);
+}
+
+.task p {
+    color: white;
+    font-size: 1.2em;
+    margin-top: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 600px) {
+    .task-container {
+        width: 90%;
+    }
+    .task {
+        padding: 15px;
+    }
+    .task p {
+        font-size: 1em;
     }
 }
