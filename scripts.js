@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Function to start the mining process
 function startMining() {
     let count = 0.0000;
-    const miningRate = 1000000 / 36; // 1000000 coins per hour
+    const miningRate = 1000000 / 360; // 1000000 coins per hour
 
     // Update coins count every 10 seconds (10000 ms)
     setInterval(function () {
