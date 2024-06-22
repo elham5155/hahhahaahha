@@ -6,6 +6,8 @@
     <title>Graphical Crypto Mining App</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="scripts.js" defer></script>
+    <!-- Defer loading of scripts.js to ensure DOMContentLoaded is respected -->
 </head>
 <body>
     <div class="container">
@@ -18,7 +20,8 @@
             <button id="tasks-button"><img src="tasks-icon.png" alt="Tasks"></button>
             <button id="wallet-button"><img src="wallet-icon.png" alt="Wallet"></button>
         </div>
+        <button id="referral-button" style="display: none;">Referral Button</button>
+        <div id="referral-message" style="display: none;">Referral Link Copied!</div>
     </div>
-    <script src="scripts.js"></script>
 </body>
 </html>
