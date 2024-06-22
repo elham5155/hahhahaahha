@@ -6,21 +6,22 @@ document.getElementById('start-button').addEventListener('click', function () {
 
 function startMining() {
     let count = 0.0000;
-    const miningRate = 1000000 / 36000000; // 1000000 coins per hour
+    const miningRate = 1000000 / 36; // 1000000 coins per hour
 
     setInterval(function () {
         count += miningRate;
         document.getElementById('coins-count').textContent = `Coins: ${count.toFixed(4)}`;
-    }, 1000000);
+    }, 100000);
 
     gsap.to('#logo', {
         rotation: 360,
-        duration: 1,
+        duration: 3,
         repeat: -1,
         ease: 'linear'
     });
 }
-document.getElementById("referral-button").addEventListener("click", function() {
+
+ document.getElementById("referral-button").addEventListener("click", function() {
     navigator.clipboard.writeText(window.location.href).then(() => {
         document.getElementById("referral-message").style.display = "block";
         setTimeout(() => {
