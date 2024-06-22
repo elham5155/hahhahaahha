@@ -11,11 +11,11 @@ function startMining() {
     setInterval(function () {
         count += miningRate;
         document.getElementById('coins-count').textContent = `Coins: ${count.toFixed(4)}`;
-    }, 1000);
+    }, 1000000);
 
     gsap.to('#logo', {
         rotation: 360,
-        duration: 2,
+        duration: 1,
         repeat: -1,
         ease: 'linear'
     });
