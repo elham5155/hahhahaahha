@@ -5,31 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graphical Crypto Mining App</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <button id="referral-button" class="overlay-text">Invite Friends and Copy Link</button>
-<p id="referral-message" style="display:none;">Referral link copied to clipboard!</p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 <body>
     <div class="container">
         <div id="coins-count" class="overlay-text">Coins: 0.0000</div>
         <div id="logo-container">
-    <img id="logo" src="logo.png" alt="Logo">
-</div>
+            <img id="logo" src="logo.png" alt="Logo">
+        </div>
         <button id="start-button" class="overlay-text">Start Mining</button>
-        <div id="buttons-container">
-    <button class="task-button">Tasks</button>
-    <button class="wallet-button">Wallet</button>
-</div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script>
-  gsap.to("#logo", {
-    rotation: 360,
-    duration: 5,
-    repeat: -1,
-    ease: "linear"
-  });
-</script>
+        <div class="bottom-buttons">
+            <button id="tasks-button"><img src="tasks-icon.png" alt="Tasks"></button>
+            <button id="wallet-button"><img src="wallet-icon.png" alt="Wallet"></button>
+        </div>
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html>
