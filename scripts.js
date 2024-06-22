@@ -6,7 +6,7 @@ document.getElementById('start-button').addEventListener('click', function () {
 
 function startMining() {
     let count = 0.0000;
-    const miningRate = 1000 / 3600; // 1000 coins per hour
+    const miningRate = 1000000 / 3600; // 1000 coins per hour
 
     setInterval(function () {
         count += miningRate;
