@@ -1,55 +1,45 @@
+// scripts.js
+
 document.addEventListener('DOMContentLoaded', function () {
+    let coins = 0;
+    const miningRate = 1000 / 3600; // 1000 coins per hour, converted to coins per second
+
     // Event listener for the start button
     document.getElementById('start-button').addEventListener('click', function () {
         this.style.display = 'none'; // Hide the start button
         startMining(); // Start the mining process
     });
 
-    // Event listener for the referral button
-    document.getElementById('referral-button').addEventListener('click', function () {
-        // Copy current URL to clipboard
-        navigator.clipboard.writeText(window.location.href).then(() => {
-            // Show referral message for 2 seconds
-            document.getElementById('referral-message').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('referral-message').style.display = 'none';
-            }, 2000);
-        }).catch(err => {
-            console.error('Failed to copy: ', err);
-        });
+    // Event listener for clicking on the logo to gain coins
+    document.getElementById('logo').addEventListener('click', function () {
+        coins++;
+        updateCoinsDisplay();
+        // Add animation or effect when clicking
+        this.classList.add('logo-clicked');
+        setTimeout(() => {
+            this.classList.remove('logo-clicked');
+        }, 300); // Adjust timing as needed
     });
 
     // Event listeners for navigation buttons
     document.getElementById('tasks-button').addEventListener('click', function () {
-        navigateToPage('tasks.html');
+        window.location.href = 'tasks.html';
     });
 
     document.getElementById('wallet-button').addEventListener('click', function () {
-        navigateToPage('wallet.html');
+        window.location.href = 'wallet.html';
     });
+
+    // Function to start the mining process
+    function startMining() {
+        setInterval(function () {
+            coins += miningRate;
+            updateCoinsDisplay();
+        }, 1000); // Update coins every second
+    }
+
+    // Function to update coins count display
+    function updateCoinsDisplay() {
+        document.getElementById('coins-count').textContent = `Coins: ${Math.floor(coins)}`;
+    }
 });
-
-// Function to start the mining process
-function startMining() {
-    let count = 0.0000;
-    const miningRate = 1000000 / 360; // 1000000 coins per hour
-
-    // Update coins count every 10 seconds (10000 ms)
-    setInterval(function () {
-        count += miningRate;
-        document.getElementById('coins-count').textContent = `Coins: ${count.toFixed(4)}`;
-    }, 10000); // Reduced interval to 10 seconds for better real-time update
-
-    // Animate the logo with GSAP
-    gsap.to('#logo', {
-        rotation: 360,
-        duration: 3,
-        repeat: -1,
-        ease: 'linear'
-    });
-}
-
-// Function to navigate to another page
-function navigateToPage(pageUrl) {
-    window.location.href = pageUrl;
-}
